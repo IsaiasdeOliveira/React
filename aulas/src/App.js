@@ -11,9 +11,34 @@ import {Form} from './componentes/Form.js'
 import {ListAulas} from './componentes/ListAulas.js'
 import { Bola } from './componentes/Bola8.js';
 import { Aluno } from './componentes/Aluno.js';
-function App() {
+import { ButtonEX } from './ExAula4/ButtonEx.js';
 
-  const arraySimples = [1, 2, 3, 4]
+function App() {
+   return (
+    <div className='App'>
+      <div className='Container_header_button'>
+        <h1 > Senac BCC</h1>
+        <ButtonEX textDisplay="Limpar Exercicio"  className="header_button"/>
+        <ButtonEX textDisplay="Trocar Tema" className="header_button" />
+      </div>
+      <div className='Container_Exercicios'>
+      <div className='Container_Exercicio_1'>
+         <ButtonEX textDisplay="Exercicio 1" /> 
+      </div>
+      <div className='Container_Exercicio_2'>
+         <ButtonEX textDisplay="Exercicio 2"  /> 
+      </div>
+      <div className='Container_Exercicio_3'>
+         <ButtonEX textDisplay="Exercicio 3"  /> 
+      </div>
+
+      </div>
+    </div>
+   )
+    
+
+
+  /*const arraySimples = [1, 2, 3, 4]
   const aulas = [
     {id:1, nome: "Introdução", desc: "Introdução a disciplina e a mobile", semana: 1},
     {id:2, nome: "Inicio do React", desc: "Componentes, props e eventos (e .map())!", semana: 2},
@@ -44,7 +69,7 @@ function App() {
       <Aluno alunos={listaAlunos} search={search}/>
       
     </div>
-  )
+  )*/
 
   /*return (
     <div className="App">
@@ -69,7 +94,7 @@ function App() {
       //<ListAulas/>
       //{
         /*
-        <Button textDisplay="Botao 1" habilitar={true} />
+        <Button textDisplay="Botao 1"  />
         <Button textDisplay="Botao 2" habilitar={false} />
         <Button textDisplay="Botao 3"/>
         <Button textDisplay="Botao 4"/>

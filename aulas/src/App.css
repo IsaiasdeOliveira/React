@@ -56,3 +56,38 @@
   flex-direction: column;
   align-items: center;
 }
+
+.App .Container_Exercicios {
+  display: flex;
+  justify-content: space-between;
+  top: 10px;
+  left: 10px;
+}
+
+
+.item_ButtonEx {
+  background: rgb(227, 102, 7);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  width: 400px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.App .Container_header_button {
+  background-color: #282c34;
+   display: flex;
+  justify-content: space-between;
+  top: 10px;
+  left: 10px;
+}
+
+.App .Container_header_button .header_button {
+  background: rgb(227, 102, 7);
+   margin-top: 50px; 
+  width: 150px;
+  height: 30px;
+}
