@@ -11,29 +11,45 @@ import {Form} from './componentes/Form.js'
 import {ListAulas} from './componentes/ListAulas.js'
 import { Bola } from './componentes/Bola8.js';
 import { Aluno } from './componentes/Aluno.js';
-import { ButtonEX } from './ExAula4/ButtonEx.js';
+import { Calculadora } from './ExAula4/Calculadora.js';
+import { CalculadoraIMC } from './ExAula4/CalculadoraIMC.js';
+import { ClimaTempo } from './ExAula4/ClimaTempo.js';
+import { Footer } from './ExAula4/Footer.js';
+import { Header_2 } from './ExAula4/Header_2.js';
+import { DesafioContador } from './componentes/DesafioContador.js';
 
 function App() {
-   return (
-    <div className='App'>
-      <div className='Container_header_button'>
-        <h1 > Senac BCC</h1>
-        <ButtonEX textDisplay="Limpar Exercicio"  className="header_button"/>
-        <ButtonEX textDisplay="Trocar Tema" className="header_button" />
-      </div>
-      <div className='Container_Exercicios'>
-      <div className='Container_Exercicio_1'>
-         <ButtonEX textDisplay="Exercicio 1" /> 
-      </div>
-      <div className='Container_Exercicio_2'>
-         <ButtonEX textDisplay="Exercicio 2"  /> 
-      </div>
-      <div className='Container_Exercicio_3'>
-         <ButtonEX textDisplay="Exercicio 3"  /> 
-      </div>
 
+  const [exercicio, setExercicio] = useState('')
+  const [temaEscuro, setTemaEscuro] = useState(false)
+
+
+  function mudarTema(){
+    setTemaEscuro(!temaEscuro);
+  }
+  function voltarInicio(){
+    setExercicio(null)
+  }
+
+   return (
+     <div className="App">
+      {/* Exercicios de Aula 11-03 */}
+      <div className={temaEscuro ? 'App' : 'AppLight'}>
+        <Header_2 class={temaEscuro ? 'headerDark' : 'headerLight'} tema={mudarTema} action={voltarInicio}/>
+        <DesafioContador/>
+        <div className="buttonHall">
+          <button onClick={()=>setExercicio('1')}>Exercício 1</button>
+          <button onClick={()=>setExercicio('2')}>Exercício 2</button>
+          <button onClick={()=>setExercicio('3')}>Exercício 3</button>
+        </div>
+        <div className='exercicio'>
+          {exercicio==='1' ? <Calculadora/> : <></>}
+          {exercicio==='2' ? <CalculadoraIMC/> : <></>}
+          {exercicio==='3' ? <ClimaTempo/> : <></>}
+        </div>
+        <Footer class={temaEscuro ? 'footerDark' : 'footerLight'}/>
       </div>
-    </div>
+      </div>
    )
     
 
