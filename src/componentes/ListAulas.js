@@ -24,6 +24,7 @@ export function ListAulas(){
         setArrAulas([...arrAulas, obj])
     }
 
+
     return(
         <div className="itemsContainer">
             <input 

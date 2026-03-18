@@ -17,10 +17,28 @@ import { ClimaTempo } from './ExAula4/ClimaTempo.js';
 import { Footer } from './ExAula4/Footer.js';
 import { Header_2 } from './ExAula4/Header_2.js';
 import { DesafioContador } from './componentes/DesafioContador.js';
+import {Alerte} from './componentes/Alerte.js';
 
 function App() {
 
-  const [exercicio, setExercicio] = useState('')
+   const [temaEscuro, setTemaEscuro] = useState(false)
+  function mudarTema(){
+    setTemaEscuro(!temaEscuro);
+  }
+  return(
+    /*<>
+     <Bola />
+     <Button textDisplay="Botao "  />
+    </>*/
+
+  
+    <Header_2  tema={mudarTema} isDark={temaEscuro} />
+  )
+
+}
+
+export default App;
+ /* const [exercicio, setExercicio] = useState('')
   const [temaEscuro, setTemaEscuro] = useState(false)
 
 
@@ -33,10 +51,11 @@ function App() {
 
    return (
      <div className="App">
-      {/* Exercicios de Aula 11-03 */}
-      <div className={temaEscuro ? 'App' : 'AppLight'}>
+      {/* Exercicios de Aula 11-03 */
+      /*<div className={temaEscuro ? 'App' : 'AppLight'}>
         <Header_2 class={temaEscuro ? 'headerDark' : 'headerLight'} tema={mudarTema} action={voltarInicio}/>
         <DesafioContador/>
+        <Alerte mensagem="Botão clicado!" cor="blue" alinhamento='center'/>
         <div className="buttonHall">
           <button onClick={()=>setExercicio('1')}>Exercício 1</button>
           <button onClick={()=>setExercicio('2')}>Exercício 2</button>
@@ -51,7 +70,7 @@ function App() {
       </div>
       </div>
    )
-    
+    */
 
 
   /*const arraySimples = [1, 2, 3, 4]
@@ -119,6 +138,7 @@ function App() {
        // }
     //</div>
   //);
-}
+ 
 
-export default App;
+
+

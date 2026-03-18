@@ -14,7 +14,7 @@ function BotaoAlerta({textDisplay, curso}){
     )
 }
 
-export function Header_2({tema, action, value, ...props}){
+export function Header_2({tema,isDark,  value, ...props}){
     //const curso = "TSI"
     const curso = {
         nome:"BCC", 
@@ -29,10 +29,14 @@ export function Header_2({tema, action, value, ...props}){
     return (
         <div>
             <img src={logo} />
-            <header className={props.class}>
+            <header className={'header'} style={{ 
+                    backgroundColor: isDark ? 'black' : '#f0f0f0', 
+                    color: isDark ? 'white' : 'black',
+                    padding: '10px' 
+                }}>
             <h3 style={{marginLeft:'50px'}}>SENAC - MOBILE</h3>
-            <button onClick={()=>action()} style={{marginLeft:'50px', marginRight:'-400px'}}>Limpar Exercício</button>
-            <button onClick={()=>tema()} style={{ marginRight:'50px'}}>Trocar tema</button>
+           {/* <button onClick={()=>action()} style={{marginLeft:'50px', marginRight:'-400px'}}>Limpar Exercício</button>*/}
+            <button onClick={()=>tema()}>Trocar tema</button>
             </header>
             
             {/**

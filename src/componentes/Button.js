@@ -10,9 +10,14 @@ function Button(props){
                 }}> {props.textDisplay}</button>
             */}
 
-            <button onClick={() => alert("Botao clicado")} 
-                    onMouseOver={() => console.log("Mouse Hover")}> 
-                    {props.textDisplay} 
+            <button onClick={() => alert("BCC")} > 
+                    Botão 1
+            </button>
+            <button onClick={() => alert("Isaias")} > 
+                    Botão 2
+            </button>
+            <button onClick={() => alert("Maia")} > 
+                    Botão 3
             </button>
         </>
     )

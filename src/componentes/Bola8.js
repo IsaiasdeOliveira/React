@@ -9,11 +9,15 @@ export function Bola(){
     ];
     
     const [varResposta, setVarResposta] = useState("")
+    const [varPergunta, setVarPergunta] = useState("")
     
     const gerarResposta = () =>{
+        if(varPergunta === '') return;
+
         const i = Math.floor(Math.random() * respostas.length);
     
         setVarResposta(respostas[i])
+        setVarPergunta("")
     }
 
     return(
@@ -21,6 +25,7 @@ export function Bola(){
         <h1>Bola 8 mágica!</h1>
         <h2>A bola diz: {varResposta}</h2>
 
+        <input value= {varPergunta} onChange={(e) => setVarPergunta(e.target.value)} />
         <button onClick={gerarResposta}>Gerar resposta para minha pergunta</button>
         <button onClick={()=> setVarResposta("")}>Limpar resposta</button>
         <br/>
