@@ -220,3 +220,74 @@ Calculadoras: Exercícios de conversão de tipos (parseFloat) para realizar cál
 `ClimaTempo.js`: Uso de estados compostos (objetos) para gerenciar múltiplos campos de entrada ao cadastrar uma nova cidade.
 
 Navegação no `App.js`: Uso de renderização condicional para alternar entre os exercícios e troca de tema (Dark/Light) via CSS dinâmico.
+
+# React Native
+
+## Rodando um projeto React Native
+## ....
+
+
+## Componentes Básicos 
+
+React Native não utiliza HTML, ou seja: Não se utiliza <div>, <p>, <h1>
+
+Em vez disso, se utiliza os componentes visuais : ```View```, ```Text``` e ```SafeAreaView```.
+
+###  View
+
+É o componente base para criar contêineres, parecido com uma <div> do React Web. Serve para organizar e agrupar elementos na tela.
+
+Exemplos de uso: Criar um layout, Criar caixas, colunas, linhas, Agrupar textos, imagens, botões.
+
+#### Exemplo: 
+
+```
+<View style={{ backgroundColor: 'lightgray', padding: 20 }}>
+  <Text>Conteúdo dentro da View</Text>
+</View>
+```
+
+### Text
+
+É o componente utilizado exclusivamente para texto. Diferente do HTML, no React Native qualquer texto deve estar dentro de um <Text>.
+
+Exemplos de uso: Títulos, Parágrafos, Labels, Mensagens na tela.
+
+#### Exemplo: 
+```
+
+<Text style={{ fontSize: 20 }}>
+  Olá, React Native!
+</Text>
+
+```
+### SafeAreaView
+
+Uma versão especial do View que evita que o conteúdo apareça: atrás do notch, atrás da barra de status, atrás da borda inferior curvada ou em áreas sensíveis do sistema.
+
+#### Exemplo: 
+
+```
+<SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+  <Text>Conteúdo seguro</Text>
+</SafeAreaView>
+```
+
+## Exemplo prático combinando os três
+
+```
+<SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+  <View style={{ padding: 20 }}>
+    <Text style={{ fontSize: 24, fontWeight: 'bold' }}>
+      Bem-vindo!
+    </Text>
+
+    <Text style={{ marginTop: 10 }}>
+      Esta é a sua primeira tela em React Native.
+    </Text>
+  </View>
+</SafeAreaView>
+```
+
+
+
